@@ -67,7 +67,7 @@ class bt():
                 #厂商对应ID
                 company_id=json.loads(res.text)['data']['list'][num]['company_id']
                 self.crawl_url(company_id)
-                page+=1
+            page+=1
             if page==pages:break
 if __name__ == '__main__':
     run = bt()
