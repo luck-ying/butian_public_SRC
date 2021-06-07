@@ -1,7 +1,7 @@
 import requests
 import re
 import json
-Cookie='btuc_ba52447ea424004a7da412b344e5e41a=7ad44fe54f2725a2766ec57452066076c26a34d4f229dcb2f3868f4c214ecf0a;PHPSESSID=o91ilhv6s16ht1osufhlj70240'
+Cookie=''
 headers = {
            'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:22.0) Gecko/20100101 Firefox/22.0',
            'content-type': 'application/x-www-form-urlencoded',
