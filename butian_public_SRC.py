@@ -1,7 +1,8 @@
 import requests
 import re
 import json
-Cookie=''
+import time
+Cookie='UM_distinctid=181187f38ef917-00ef47954c06cf-654e274b-1ea000-181187f38f0c1d; PHPSESSID=e4u8bik1g6tn5b1cogv7tr9a61; notice=0; __btu__=5f92b856f9692117b42a3de78a4390bc8d375aa7; __btc__=8ee136359ea716045c3483398964a3e41072287f; __btuc__=856f05aa21eed9b21ef1ebb996fe89eff5ca59cf; _currentUrl_=/Message'
 headers = {
            'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:22.0) Gecko/20100101 Firefox/22.0',
            'content-type': 'application/x-www-form-urlencoded',
@@ -37,8 +38,8 @@ class bt():
         target_url=f'https://www.butian.net/Loo/submit?cid={company_id}'
         res=requests.get(url=target_url,headers=headers)
         if res.status_code==200:
-            name=re.findall('name="company_name".*\n.* value="(.*)"',res.text)
-            url=re.findall('name="host".*\n.* value="([^"]{4,})"',res.text)
+            name=re.findall('<input type="text" class="input-xlarge" value="(.*)" placeholder="请选择" id="qrm-input"  name="company_name" style="width: 200px">',res.text)
+            url=re.findall('<input class="input-xlarge" type="text" name="host" placeholder="输入所属域名或ip，若存在多个以,分隔".*\n.*value="(.*)" />',res.text)
             #print(str(name)+' '+str(url))
             #src_name=(name[0]+'\n').encode()
             #src_url=(url[0]+'\n').encode()
@@ -67,6 +68,8 @@ class bt():
                 #厂商对应ID
                 company_id=json.loads(res.text)['data']['list'][num]['company_id']
                 self.crawl_url(company_id)
+                time.sleep(1)
+
             page+=1
             if page==pages:break
 if __name__ == '__main__':
