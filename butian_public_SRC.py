@@ -2,7 +2,7 @@ import requests
 import re
 import json
 import time
-Cookie='UM_distinctid=181187f38ef917-00ef47954c06cf-654e274b-1ea000-181187f38f0c1d; PHPSESSID=e4u8bik1g6tn5b1cogv7tr9a61; notice=0; __btu__=5f92b856f9692117b42a3de78a4390bc8d375aa7; __btc__=8ee136359ea716045c3483398964a3e41072287f; __btuc__=856f05aa21eed9b21ef1ebb996fe89eff5ca59cf; _currentUrl_=/Message'
+Cookie=''
 headers = {
            'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:22.0) Gecko/20100101 Firefox/22.0',
            'content-type': 'application/x-www-form-urlencoded',
